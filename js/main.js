@@ -82,11 +82,13 @@ search.addEventListener('change', async (event) => {
 
     // Mostra lo spinner durante il caricamento dei dati
     const spinner = document.getElementById('spinner');
+    spinner.style.display = 'block';
 
     const pkmnData = await fetchApi(event.target.value);
 
     // Nascondi lo spinner una volta che i dati sono stati caricati o in caso di errore
     spinner.style.display = 'none';
+    
 
     if (!pkmnData) {
         alert('Pokémon does not exist.');
